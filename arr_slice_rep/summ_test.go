@@ -2,6 +2,8 @@ package arrSliceRep
 
 import (
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func TestSumm(t *testing.T) {
@@ -41,4 +43,33 @@ func TestSumm(t *testing.T) {
 		}
 	})
 
+	t.Run("test SummAll", func(t *testing.T) {
+		want := []int{3, 9}
+		got := SummAll([]int{1, 2}, []int{0, 9})
+		require.Equal(t, want, got)
+	})
+
+	t.Run("test SummAll", func(t *testing.T) {
+		want := []int{5, 4}
+		got := SummAll([]int{3, 2}, []int{2, 2})
+		require.Equal(t, want, got)
+	})
+
+	t.Run("test SummAll", func(t *testing.T) {
+		want := []int{7, 6, 8}
+		got := SummAll([]int{3, 2, 2}, []int{2, 2, 2}, []int{4, 2, 2})
+		require.Equal(t, want, got)
+	})
+
+	t.Run("test SummAll", func(t *testing.T) {
+		want := []int{}
+		got := SummAll()
+		require.Equal(t, want, got)
+	})
+
+	t.Run("test SummAll", func(t *testing.T) {
+		want := []int{0}
+		got := SummAll([]int{})
+		require.Equal(t, want, got)
+	})
 }
