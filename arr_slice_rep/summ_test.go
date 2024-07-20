@@ -72,4 +72,17 @@ func TestSumm(t *testing.T) {
 		got := SummAll([]int{})
 		require.Equal(t, want, got)
 	})
+
+	t.Run("summAllTails", func(t *testing.T) {
+		want := []int{2, 9}
+		got := SumAllTails([]int{1, 2}, []int{0, 9})
+		require.Equal(t, want, got)
+	})
+
+	t.Run("summAllTails", func(t *testing.T) {
+		want := []int{0, 9}
+		got := SumAllTails([]int{}, []int{0, 9})
+		require.Equal(t, want, got)
+	})
+
 }

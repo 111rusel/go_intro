@@ -24,3 +24,15 @@ func SummAll(slices ...[]int) []int {
 	}
 	return result
 }
+
+func SumAllTails(slices ...[]int) []int {
+	result := []int{}
+	for _, s := range slices {
+		if len(s) < 2 {
+			result = append(result, 0)
+		} else {
+			result = append(result, SummSlice(s[1:]))
+		}
+	}
+	return result
+}
